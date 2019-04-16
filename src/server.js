@@ -19,6 +19,7 @@ mongoose.connect(database.uri, {
 
 app.use(cors());
 app.use(helmet());
+app.use(morgan('dev'))
 app.use(express.json());
 app.use((req, res, next) => {
   req.io = io;
@@ -30,5 +31,4 @@ app.get("/ping", (req, res) => {
   return res.status(200).json({ ping: "pong" });
 });
 
-
-server.listen(port, () => console.log("server up"));
+server.listen(port, () => console.log("🤘 server up 🤘"));
