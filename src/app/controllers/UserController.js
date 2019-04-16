@@ -10,6 +10,6 @@ module.exports = {
 
     return res
       .status(201)
-      .json(await User.create(req.body).select(["name", "email", "createdAt"]));
+      .json(await User.create(req.body));
   }
 };
