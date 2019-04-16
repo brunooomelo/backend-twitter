@@ -26,10 +26,10 @@ app.use((req, res, next) => {
   req.io = io;
   return next();
 });
-app.use(require("./routes"));
-
 app.get("/ping", (req, res) => {
   return res.status(200).json({ ping: "pong" });
 });
+app.use(require("./routes"));
+
 
 server.listen(port, () => console.log("🤘 server up 🤘"));
