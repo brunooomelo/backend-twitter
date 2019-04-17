@@ -21,8 +21,6 @@ module.exports = {
       model: "User",
       select: ["name"]
     });
-    console.log(socket, socket[0]);
-
     req.io.emit("tweet", socket[0]);
 
     return res.json(tweet);
