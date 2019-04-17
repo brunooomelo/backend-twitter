@@ -2,8 +2,8 @@ const User = require("../models/User");
 
 module.exports = {
   async store(req, res) {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email }).select(['password', 'name', 'email', 'createdAt'])
+    const { name, password } = req.body;
+    const user = await User.findOne({ name }).select(['password', 'name', 'email', 'createdAt'])
 
     if (!user) {
       return res.status(400).json({ error: "User not found" });
